@@ -11,11 +11,11 @@ import view.SearchPatient;
 public class ControlMedicalPanel implements ActionListener {
 
 	private MedicalPanel medicalPanel;
-	
-	
+	private Login login;
+	private SearchPatient searchPatient;
 	public ControlMedicalPanel(MedicalPanel medicalPanel) {
 		this.medicalPanel = medicalPanel;
-	 
+		
 	}
 
 	@Override
@@ -27,17 +27,20 @@ public class ControlMedicalPanel implements ActionListener {
 		if (buttonChosen==medicalPanel.getPatientForm()) {
 			
 			medicalPanel.dispose();
-			SearchPatient searchPatient=new SearchPatient();
-			
+			searchPatient=new SearchPatient();
 			
 		}
 		else if(buttonChosen==medicalPanel.getShiftPatients())
 		{
+ 
 			System.out.println("getShiftPatients");
 		}
 		else
 		{
-			System.out.println("getGoBack");
+			
+			medicalPanel.dispose();
+			this.login=new Login();
+		  
 		}
 		  
 
