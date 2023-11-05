@@ -2,13 +2,13 @@ package main;
 
  
 
-import view.Login;
+import view.PatientForm;
 
 public class Abstract {
 
 	public static void main(String[] args) {
 		 
-		 Login login=new Login();
+		PatientForm login=new PatientForm();
 		 
 		
 	}

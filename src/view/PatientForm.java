@@ -13,27 +13,23 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import controller.ControlLogin;
-
-public class Login extends JFrame{
-
-	private static JTextField  user;
-	private JPasswordField inPass;
-	private JButton login; 
+public class PatientForm extends JFrame {
 	
-	public Login() {
+	private static JTextField  patient;
+	private JButton seachPatient; 
+	
+	public PatientForm() {
 		
-		setTitle("Abstract");
+		setTitle("Buscar Paciente");
 		setSize(300, 300);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setLayout(new BorderLayout());
 		setBackground(Color.BLUE);
 		
-		
 		JPanel sheetUpper = new JPanel();
 		sheetUpper.setLayout(new FlowLayout());
-		JLabel titleMain = new JLabel("SISTEMA CLÍNICO");
+		JLabel titleMain = new JLabel("Planilla Paciente");
 		titleMain.setFont(new Font("Arial", Font.BOLD, 30));
 		sheetUpper.add(titleMain);
 		
@@ -44,50 +40,26 @@ public class Login extends JFrame{
 		sheetCentralIncomeData.setLayout(new GridLayout(3, 3));
 		centralSheet.add(sheetCentralIncomeData, BorderLayout.NORTH);
 		
-		JLabel msgDNI = new JLabel("Usuario");
+		JLabel msgDNI = new JLabel("DNI");
 		sheetCentralIncomeData.add(msgDNI);
-		user = new JTextField();
-		sheetCentralIncomeData.add(user);
+		patient = new JTextField();
+		sheetCentralIncomeData.add(patient);
+		 
 		
-		JLabel msjePass = new JLabel("Contaseña");
-		sheetCentralIncomeData.add(msjePass);
-		inPass = new JPasswordField();
-		sheetCentralIncomeData.add(inPass);
 		
 		
 		JPanel bottomSheet = new JPanel();
 		bottomSheet.setLayout(new FlowLayout());
-		login = new JButton("Iniciar Sesión"); 
-		bottomSheet.add(login);
+		seachPatient = new JButton("Buscar"); 
+		bottomSheet.add(seachPatient);
 		 
 		add(sheetUpper, BorderLayout.NORTH);
 		add(centralSheet, BorderLayout.CENTER);
 		add(bottomSheet, BorderLayout.SOUTH);
 		
-		ControlLogin buttonControl = new ControlLogin(this);
-		
-		login.addActionListener(buttonControl); 
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-		
-		
 	}
-	
-	public String getDniUser()
-	{
-		 return user.getText();
-	}
-	
-	public String  getInPass(){
-		
-		char[] arrayC = inPass.getPassword();
-		String pass = new String(arrayC);
-		return pass;
-	}
-	
-	public JButton  getLogin(){
-		return login;
-	}
-	
+
 }
