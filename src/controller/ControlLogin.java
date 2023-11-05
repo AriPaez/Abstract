@@ -3,7 +3,10 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+
 import view.Login;
+import view.MedicalPanel;
  
 public class ControlLogin implements ActionListener {
 
@@ -20,9 +23,21 @@ public class ControlLogin implements ActionListener {
 		
 		Object buttonChosen = e.getSource();
 		
-		 //search the database for user to login
-		System.out.println("User:"+login.getDniUser());
-		System.out.println("Pass:"+login.getInPass());
+		//search the database for user to login
+		if(login.getDniUser().equals("apaez") && login.getInPass().equals("123")) {
+			
+			MedicalPanel medicalPanel=new MedicalPanel();
+			login.dispose();
+			
+			
+		}
+		else
+		{
+			System.out.println("Error, not open windows MedicalPanel ");
+		}
+		
+		
+		  
 
 	}
 

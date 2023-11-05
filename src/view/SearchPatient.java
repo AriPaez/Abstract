@@ -13,12 +13,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class PatientForm extends JFrame {
+public class SearchPatient extends JFrame {
 	
 	private static JTextField  patient;
 	private JButton seachPatient; 
 	
-	public PatientForm() {
+	public SearchPatient() {
 		
 		setTitle("Buscar Paciente");
 		setSize(300, 300);

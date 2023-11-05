@@ -7,11 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import controller.ControlMedicalPanel;
+
 public class MedicalPanel  extends JFrame {
 	
-	private  JButton turnoPacientes;
-	private  JButton planillaPacientes;
-	private  JButton salir;
+	private  JButton shiftPatients;
+	private  JButton patientForm;
+	private  JButton goBack;
 	
 	public MedicalPanel() {
 		 
@@ -22,50 +24,64 @@ public class MedicalPanel  extends JFrame {
 		 setResizable(false);
 		 getContentPane().setLayout(null);
 		 
-		 JLabel tituloPrincipal = new JLabel("Panel de Control");
-		 tituloPrincipal.setFont(new Font("Arial", Font.BOLD, 20));
-		 tituloPrincipal.setBounds(71, 11, 177, 38);
-		 getContentPane().add(tituloPrincipal);
+		 JLabel titleMain = new JLabel("Panel de Control");
+		 titleMain.setFont(new Font("Arial", Font.BOLD, 20));
+		 titleMain.setBounds(71, 11, 177, 38);
+		 getContentPane().add(titleMain);
 		 
-		 planillaPacientes = new JButton("");
-		 planillaPacientes.setIcon(new ImageIcon("here path"));
-		 planillaPacientes.setBounds(55, 87, 50, 50);
-		 getContentPane().add(planillaPacientes);
+		 patientForm = new JButton("");
+		 patientForm.setIcon(new ImageIcon("here path"));
+		 patientForm.setBounds(55, 87, 50, 50);
+		 getContentPane().add(patientForm);
 		 
 		 JLabel msjePlanilaPaciente = new JLabel("Planilla Paciente");
 		 msjePlanilaPaciente.setFont(new Font("Arial", Font.BOLD, 12));
 		 msjePlanilaPaciente.setBounds(38, 148, 94, 14);
 		 getContentPane().add(msjePlanilaPaciente);
 		 
-		 turnoPacientes = new JButton();
-		 turnoPacientes.setIcon(new ImageIcon("here path"));
-		 turnoPacientes.setBounds(198, 87, 50, 50);
-		 getContentPane().add(turnoPacientes);
+		 shiftPatients = new JButton();
+		 shiftPatients.setIcon(new ImageIcon("here path"));
+		 shiftPatients.setBounds(198, 87, 50, 50);
+		 getContentPane().add(shiftPatients);
 		 
-		 JLabel msjeTurnoPacientes = new JLabel("Turno del día");
-		 msjeTurnoPacientes.setFont(new Font("Arial", Font.BOLD, 12));
-		 msjeTurnoPacientes.setBounds(171, 148, 110, 14);
-		 getContentPane().add(msjeTurnoPacientes);
+		 JLabel msgShiftPatients = new JLabel("Turno del día");
+		 msgShiftPatients.setFont(new Font("Arial", Font.BOLD, 12));
+		 msgShiftPatients.setBounds(171, 148, 110, 14);
+		 getContentPane().add(msgShiftPatients);
 		 
-		 salir = new JButton();
-		 salir.setIcon(new ImageIcon("here path"));
-		 salir.setBounds(125, 238, 50, 50);
-		 getContentPane().add(salir);
+		 goBack = new JButton();
+		 goBack.setIcon(new ImageIcon("here path"));
+		 goBack.setBounds(125, 238, 50, 50);
+		 getContentPane().add(goBack);
 		 
-		 JLabel msjeSalir = new JLabel("Salir");
-		 msjeSalir.setFont(new Font("Arial", Font.BOLD, 12));
-		 msjeSalir.setBounds(135, 293, 26, 14);
-		 getContentPane().add(msjeSalir);
+		 JLabel msgExit = new JLabel("Volver");
+		 msgExit.setFont(new Font("Arial", Font.BOLD, 12));
+		 msgExit.setBounds(135, 293, 26, 14);
+		 getContentPane().add(msgExit);
 		 
 		 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 setVisible(true);
 			
 		 
-		// ControlVentanaMedico cVM=new ControlVentanaMedico(this);
+		 ControlMedicalPanel cVP=new ControlMedicalPanel(this);
 		 
-		// turnoPacientes.addActionListener(cVM);
-		// planillaPacientes.addActionListener(cVM);
-		// salir.addActionListener(cVM);
+		 shiftPatients.addActionListener(cVP);
+		 patientForm.addActionListener(cVP);
+		 goBack.addActionListener(cVP);
 	}
+	
+	public  JButton getShiftPatients() {
+		return shiftPatients;
+	}
+	
+	public JButton getPatientForm() {
+		return patientForm;
+	}
+	
+	public  JButton getGoBack() {
+		return goBack;
+	}
+	
+	
 
 }
